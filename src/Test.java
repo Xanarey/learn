@@ -1,43 +1,25 @@
-class Test {
-    private int stck[];
-    private int tos;
+import java.util.Scanner;
 
-    Test(int size) {
-        stck = new int[size];
-        tos = -1;
-    }
-
-    int lengthStack() {
-        return stck.length;
-    }
-
-    void push(int item) {
-        if(tos == stck.length - 1) {
-            System.out.println("Stack overflow");
-        } else {
-            stck[++tos] = item;
-        }
-    }
-
-    int pop() {
-        if(tos < 0) {
-            System.out.printf("Stack - p.");
-            return 0;
-        } else return stck[tos--];
-    }
-}
-
-class StackApp {
+public class Test {
     public static void main(String[] args) {
-        Test stack1 = new Test(10);
-        Test stack2 = new Test(20);
-
-        for(int i = 0; i < stack1.lengthStack();i++) stack1.push(i);
-        for(int i = 0; i < stack2.lengthStack();i++) stack2.push(i);
-
-        for(int i = 0; i < stack1.lengthStack();i++) System.out.println("Stack1: " + stack1.pop());
-        for(int i = 0; i < stack2.lengthStack();i++) System.out.println("Stack2: " + stack2.pop());
-
+        Scanner sc = new Scanner(System.in);
+        int n;
+        do {
+            System.out.println("Введите размер массива (больше 3-х): ");
+            n = sc.nextInt();
+            n = (int)((Math.random()*(n+1)));
+        } while (n <= 3);
+        System.out.println(n);
 
     }
 }
+/*
+public class Test {
+    public static void main(String[] args) {
+        int i = 0;
+        while(i == 0) {
+            System.out.println((int)(Math.random()*5)-0);
+        }
+
+    }
+}*/
